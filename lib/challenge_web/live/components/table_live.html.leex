@@ -1,0 +1,17 @@
+<div>
+    <h3>Successful Transactions</h3>
+    <ul class="tx-table">
+        <li class="table-header">
+            <div class="col col-1">Tx Hash</div>
+            <div class="col col-2">Date & Time</div>
+            <div class="col col-3">Status</div>
+        </li>
+        <%= for tx <- @transactions do %>
+            <li class="table-row">
+                <div class="col col-1" data-label="Transaction hash"><%= tx.tx_hash %></div>
+                <div class="col col-2" data-label="Timestamp"><%= format_time(tx.time) %></div>
+                <div class="col col-3 td-success" data-label="Status">Success</div>
+            </li>
+      <% end %>
+    </ul>
+</div>

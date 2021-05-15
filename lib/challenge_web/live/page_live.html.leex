@@ -1,0 +1,28 @@
+<section class="phx-hero">
+  <h1>Challenge</h1>
+
+  <form phx-submit="save_transaction">
+    <input type="text" name="txhash" value="<%= @txhashinput %>" placeholder="ETH Transaction Hash" list="results" autocomplete="off"/>
+
+    <button type="submit" phx-disable-with="Communicating with Server ...">Submit Transaction</button>
+  </form>
+</section>
+
+<section class="row">
+  <article class="column">
+    <%= live_render(@socket, Challenge.TableLive, id: "table_transaction") %>
+    <%# <h2>Result</h2> %>
+    <%# <ul>
+      <li>
+        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
+      </li>
+    </ul> %>
+  </article>
+
+</section>
